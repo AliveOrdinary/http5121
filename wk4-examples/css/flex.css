@@ -1,0 +1,61 @@
+.flex-container-row,
+.flex-container-column,
+.flex-item {
+  border:1px solid #000;
+}
+.flex-container, .flex-container-column {
+  background-color:#c498ff; /* so flex container is easily visible */
+}
+
+.flex-container {
+  padding:1em;
+  display:flex;
+ /*  flex-direction:row;
+  flex-wrap:wrap; */
+  flex-flow: row wrap;
+  /* justify-content:space-between; */
+  /* align-items:flex-start; */
+  gap:20px;
+  height:300px;
+}
+.flex-item {
+  background-color:#fdd489; /* so flex item is easily visible */
+  flex-grow:1;
+  flex-shrink:1;
+  flex-basis:0;
+}
+
+.flex-item:nth-child(3) {
+  order:1;
+  flex-grow:3;
+  flex-basis:150px;
+}
+
+/* LAYOUT EXAMPLE */
+#header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.menu {
+  display:flex;
+  list-style:none;
+  column-gap:3em;
+}
+.content-wrapper {
+  display:flex;
+  flex-flow:row wrap;
+  gap:1em;
+}
+.content-wrapper > * {
+  border:1px solid #000;
+  /* flex-basis:0; */
+  flex:1 1 0; /* <flex-grow> <flex-shrink> <flex-basis> */
+  margin:1em 0;
+}
+#main {
+  flex-grow:2;
+}
+#sidebar-one {
+  order:-1;
+}
